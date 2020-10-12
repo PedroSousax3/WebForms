@@ -15,10 +15,12 @@
 
     <br />
     <br />
-
-    <asp:GridView ID="GridView1" runat="server"
+    <div>
+        <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
+    </div>
+    <asp:GridView ID="GridView1" class="table" runat="server"
         AutoGenerateColumns="false"
-        DataKeyNames="ID"
+        DataKeyNames="id_login"
     >
     <Columns>
         <asp:TemplateField HeaderText="ID">
@@ -43,4 +45,55 @@
         </asp:TemplateField>
     </Columns>
     </asp:GridView>
+    <br />
+    <br />
+    <asp:RadioButtonList ID="RadioButtonList1" runat="server">
+        <asp:ListItem>ColdFusion</asp:ListItem>
+        <asp:ListItem>Asp.Net</asp:ListItem>
+        <asp:ListItem>PHP</asp:ListItem>
+    </asp:RadioButtonList>
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+    <div>
+        <asp:Button ID="Button5" runat="server" Text="Button" OnClientClick="Button_Click2" OnClick="Button5_Click" />
+    </div>
+
+    <br />
+    <br />
+    <asp:CheckBoxList 
+            ID="CheckBoxList1"
+            runat="server"
+            Font-Italic="true"
+            Font-Names="Courier New"
+            Font-Size="X-Large"
+            >
+            <asp:ListItem>ColdFusion</asp:ListItem>
+            <asp:ListItem>PHP</asp:ListItem>
+            <asp:ListItem>JSP</asp:ListItem>
+            <asp:ListItem>Asp.Net</asp:ListItem>
+            <asp:ListItem>Flex</asp:ListItem>
+        </asp:CheckBoxList>
+
+    <div>
+        <asp:Button ID="Button2" runat="server" Text="Button" OnClientClick="Button_Click4" />
+    </div>
+    <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+
+    <br />
+    <br />
+
+    <div>
+        <asp:DropDownList ID="DropDownList1" runat="server">
+            <asp:ListItem Text="Item 1" Value="1"/>
+            <asp:ListItem Text="Item 2" Value="2"/>
+            <asp:ListItem Text="Item 3" Value="3"/>
+            <asp:ListItem Text="Item 4" Value="4"/>
+            <asp:ListItem Text="Item 5" Value="5"/>
+        </asp:DropDownList>
+
+        <br />
+        <asp:Button ID="Button3" runat="server" Text="Button" OnClientClick="Button3_Click" OnClick="Button3_Click" />
+
+        <br />
+        <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+    </div>
 </asp:Content>

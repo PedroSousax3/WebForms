@@ -13,7 +13,6 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         public void preencherGrid()
@@ -23,6 +22,21 @@ namespace WebApplication1
 
             GridView1.DataSource = tabela;
             GridView1.DataBind();
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            this.preencherGrid();
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            Label1.Text = RadioButtonList1.SelectedValue;
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Label3.Text = DropDownList1.Text.ToString();
         }
     }
 }
