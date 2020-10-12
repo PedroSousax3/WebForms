@@ -85,7 +85,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\NewFolder1\" />
     <Folder Include="Repository\" />
   </ItemGroup>
   <PropertyGroup>

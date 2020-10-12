@@ -9,15 +9,19 @@ namespace Database.DAO.Login
 {
     public class LoginDAO : ConnectionDatabase
     {
-        public void InserirLoginDAO(Models.Login login) 
+        public void CadastarUsuarioDAO(Models.Login login) 
         {
             try
             {
                 SqlConnection conn = SqlConectar();
 
-                SqlCommand cmd = new SqlCommand("sp_inserir_login", conn);
+                SqlCommand cmd = new SqlCommand("sp_inserir_login_cliente", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
+                cmd.Parameters.AddWithValue("@nome", login.NmCompleto);
+                cmd.Parameters.AddWithValue("@email", login.DsEmail);
+                cmd.Parameters.AddWithValue("@cpf", login.DsCpf);
+                cmd.Parameters.AddWithValue("@nascimento", login.DtNascimento);
                 cmd.Parameters.AddWithValue("@usuario", login.NmUsuario);
                 cmd.Parameters.AddWithValue("@senha", login.DsSenha);
                 cmd.Parameters.AddWithValue("@ultimologin", login.DtUltimoLogin);
