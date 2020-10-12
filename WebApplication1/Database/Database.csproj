@@ -73,6 +73,7 @@
     <Compile Include="ConnectionDatabase.cs" />
     <Compile Include="DAO\Login\LoginDAO.cs" />
     <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\LoginResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

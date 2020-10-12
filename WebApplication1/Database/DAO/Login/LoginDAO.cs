@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
-using System.Reflection;
-using Database;
 
 namespace Database.DAO.Login
 {
@@ -33,6 +32,31 @@ namespace Database.DAO.Login
                 throw new ArgumentException("Não foi possivel realizar o cadastro. Erro:" + ex.Message);
             }
             finally 
+            {
+                SqlDesconectar();
+            }
+        }
+
+        public DataTable Listar()
+        {
+            try
+            {
+                SqlConnection conn = SqlConectar();
+
+                SqlCommand cmd = new SqlCommand("sp_listar_login", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader dr = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                
+                dt.Load(dr);
+                return dt;
+            }
+            catch (System.Exception ex)
+            {
+                throw new ArgumentException("Não foi possivel realizar o cadastro. Erro:" + ex.Message);
+            }
+            finally
             {
                 SqlDesconectar();
             }
