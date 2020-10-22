@@ -10,7 +10,7 @@
                     let item = $("#TextBox1")[0].style;
                     if (item.display == "none") {
                         item.display = "block";
-                        $("body").animate({ scrollTop: $(this.hash).offset().top }, 1100);
+                        window.scrollBy(0, 1000);
                     }
                     else
                         item.display = "none";
@@ -26,6 +26,12 @@
     	    font-style:italic;
     	    color:#CCCCCC;
         }
+
+        #btnSubmeter {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+        }
     </style>
 
     <h2><%: Title %>.</h2>
@@ -34,7 +40,7 @@
         <div>
            <fieldset style="width:400px;height:80px;">
             <p>
-                <div style="display: none; margin-top: 100vh;" id="TextBox1">Informe seu critério de busca</div>
+                <div style="display: none;margin-top: 100vh; " id="TextBox1">Informe seu critério de busca</div>
                 <button id="btnSubmeter">Procurar</button>
             </p>
            </fieldset>
