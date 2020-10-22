@@ -24,6 +24,21 @@ namespace WebApplication1
             GridView1.DataBind();
         }
 
+        protected void Button_Click4(object sender, EventArgs e)
+        {
+            string YrStr = "";
+            for (int i = 0; i < CheckBoxList1.Items.Count; i++)
+            {
+                if (CheckBoxList1.Items[i].Selected)
+                {
+                    YrStr += CheckBoxList1.Items[i].Value + ";";
+                }
+            }
+
+            Label2.Text = YrStr;
+
+        }
+
         protected void Button1_Click(object sender, EventArgs e)
         {
             this.preencherGrid();
@@ -36,7 +51,7 @@ namespace WebApplication1
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            Label3.Text = DropDownList1.Text.ToString();
+            Label3.Text = DropDownList1.SelectedItem.Value;
         }
     }
 }
